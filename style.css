@@ -169,6 +169,6 @@ body {
     .foot {
         flex-direction: column;
         justify-content: space-around;
-        height: 30svh;
+        height: 20svh;
     }
 }
