@@ -6,14 +6,10 @@
     padding: 0;
 }
 
-body {
-    font-size: 0.9375em;
-}
-
 /* style for the container */
 .container {
     max-width: 1440px;
-    min-height: 100vh;
+    min-height: 100svh;
     margin: 0 auto;
     background-color: hsl(233, 47%, 7%);
     display: flex;
@@ -24,43 +20,23 @@ body {
 /* style for the card */
 .card {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: column;
+    width: 90%;
+    max-width: 400px;
 }
 
 /* style for the image part */
 .img-container {
-    position: relative;
-    width: 540px;
-    height: 450px;
-    border-radius: 0 7px 7px 0;
-}
-
-@media (min-width: 768px) {
-    .img-container #main-img {
-        background-image: url('image-header-desktop.jpg');
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-    }
-}
-
-.img-container #main-img {
-    width: inherit;
-    height: inherit;
-    border-radius: inherit;
-}
-
-/* .img-container #main-img img {
     max-width: 100%;
-    height: inherit;
-    border-radius: inherit;
-} */
+    border-radius: .5em .5em 0 0;
+    height: 300px;
+    background-image: url('image-header-mobile.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
 
 .img-container .mask {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     width: inherit;
     height: inherit;
     background-color: hsla(277, 64%, 61%, .5);
@@ -69,22 +45,26 @@ body {
 
 /* style for the text area */
 .text-area {
-    width: 600px;
-    height: 450px;
+    max-width: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     background-color: hsl(244, 38%, 16%);
-    padding: 80px 120px 0 100px;
-    border-radius: 7px 0 0 7px;
+    padding: 1.9em 1.5625em ;
+    border-radius: 0 0 .5em .5em;
 }
 
 .header {
     margin-bottom: 30px;
-    width: 400px;
+    width: 90%;
+    padding: 0 1em;
 }
 
 .header h1 {
     font-family: 'Inter', sans-serif;
     font-weight: 700;
-    font-size: 37px;
     color: hsl(0, 0%, 100%);
     line-height: 1.2;
 }
@@ -94,11 +74,13 @@ body {
 }
 
 .main {
-    margin-bottom: 70px;
-    width: 350px;
+    margin-bottom: 4em;
+    width: 90%;
+    padding: 0 .5em;
 }
 
 .main p {
+    font-size: 0.9375rem;
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     color: hsla(0, 0%, 100%, 0.75);
@@ -107,7 +89,9 @@ body {
 
 .foot {
     display: flex;
-    width: 350px;
+    flex-direction: column;
+    width: 90%;
+    height: 250px;
     justify-content: space-between;
 }
 
@@ -119,42 +103,50 @@ body {
 }
 
 .desc p {
+    font-size: 0.9375rem;
     font-family: 'Lexend Deca', sans-serif;
     font-weight: 400;
     color: hsla(0, 0%, 100%, 0.6);
 }
 
-@media (max-width: 767px) {
+
+@media (min-width: 1000px) {
     .card {
-        flex-direction: column;
+        flex-direction: row-reverse;
+        width: 80%;
+        max-width: 950px;
+        margin: 50px 0;
     }
 
     .img-container {
-        width: 85vw;
-        height: 30svh;
-        border-radius: 7px 7px 0 0;
-    }
-
-    .img-container #main-img {
-        background-image: url('image-header-mobile.jpg');
+        width: 45%;
+        height: 450px;
+        background-image: url('image-header-desktop.jpg');
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
+        border-radius: 0 .5em .5em 0;
+    }
+
+    .img-container .mask {
+        width: 100%;
+        height: inherit;
+        background-color: hsla(277, 64%, 61%, .5);
+        border-radius: inherit;
     }
 
     .text-area {
-        width: 85vw;
-        height: 60svh;
-        padding: 20px 10px;
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
+        width: 55%;
+        height: 450px;
+        padding: 4em 3em;
+        display: block;
+        text-align: left;
+        border-radius: .5em 0 0 .5em;
     }
 
-    .text-area .header {
-        width: 300px;
-        margin-bottom: 15px;
+    .header {
+        padding: 0;
+        margin-bottom: 2em;
     }
 
     .header h1 {
@@ -162,12 +154,12 @@ body {
     }
 
     .main {
-        width: 250px;
-        margin-bottom: 10px;
+        padding: 0 2em 0 0;
+        margin-bottom: 5em;
     }
 
     .foot {
-        flex-direction: column;
-        justify-content: space-around;
+        flex-direction: row;
+        justify-content: space-between;
     }
 }
